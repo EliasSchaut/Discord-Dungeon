@@ -12,20 +12,18 @@
 const fs = require('fs')
 const Discord = require('discord.js')
 
-// create client with its intents (see also: https://discord.js.org/#/docs/main/stable/class/Intents?scrollTo=s-FLAGS)
+// create client with its intents
 const client = new Discord.Client({ intents: [
         Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.DIRECT_MESSAGE_TYPING, Discord.Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
         Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_INTEGRATIONS,
         Discord.Intents.FLAGS.GUILD_MESSAGE_TYPING, Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
         partials: ['CHANNEL']})
 
-// get required methods and fields and save it into client. This will always be accessible with msg.client
+// get required methods and fields and save it into client. This will always be accessible with message.client
 client.commands = new Discord.Collection()
 client.config = require('../config/config.json')
 client.helper = require('./util/cmd_helper')
 client.lang_helper = require("./lang/lang_man")
-client.DB = require('./db/db_init').DB
-client.sequelize = require('./db/db_init').sequelize
 client.logger = require("./util/logger").logger
 client.slasher = require("./handler/slash_handler/slasher")
 client.command_event = require("./handler/event_handler/command_event")
@@ -36,7 +34,7 @@ client.events = require("./handler/event_handler/events")
 client.output = require("./util/output")
 client.mod_man = require("./handler/modification_handler/mod_manager")
 
-// dynamically retrieve all command files and additionally save it into msg.client.command_tree
+// dynamically retrieve all command files and additionally save it into message.client.command_tree
 async function load_commands(client) {
     let command_tree = {}
     const commandFolders = fs.readdirSync("./src/commands")
@@ -61,9 +59,9 @@ async function load_commands(client) {
 // ---------------------------------
 // Event-Handler
 // ---------------------------------
-// when the client (bot) is ready
+// when the client is ready (bot is ready)
 client.once('ready', async () => {
-    // inits mods
+    // set mods
     const problem_free_set_up = client.mod_man.init(client)
 
     // load commands
@@ -74,11 +72,10 @@ client.once('ready', async () => {
         await client.user.setActivity(client.config.activity.name, { type: client.config.activity.type })
     }
 
-    // sync database
-    await client.sequelize.sync()
-
     // sync slash commands
-    await client.slasher.register(client)
+    if (client.config.enable_slash_commands) {
+        await client.slasher.register(client)
+    }
 
     // set up events
     await client.events.init(client)

@@ -7,7 +7,7 @@
     "args_needed": "Dieser Befehl benötigt Argumente! Du hast aber keine abgegeben.",
     "args_min_length": "Dieser Befehl benötigt mindestens %0 Argumente! Du hast aber nur %1 abgegeben.",
     "args_max_length": "Diesem Befehl können maximal %0 Argumente übergeben werden! Du hast aber %1 abgegeben.",
-    "cooldown": "Auf diesen Befehl gibt es einen Cooldown. Du musst noch `%0` warten, um den Befehl wieder ausführen zu können.",
+    "cooldown": "Immer langsam, du bist einem Cooldown ausgesetzt. Du musst noch `%0` warten, um den Befehl ausführen zu können.",
     "missing_args_proper_use": "Die korrekte Verwendung wäre: `%0`!",
     "dm_only": "Ich kann diesen Befehl nur im privaten Chat mit dir ausführen!",
     "guild_only": "Ich kann diesen Befehl leider nur in Servern ausführen!",
@@ -84,6 +84,41 @@
       "too_long": "Der übergebene Prefix ist zu lang!",
       "get": "Der Prefix dieses Servers ist: %0",
       "set": "Der Prefix dieses Server wurde gesetzt auf: %0"
+    },
+
+    "begin": {
+      "help": "Starte dein Dungeon-Abenteuer!",
+      "message_explorer": "Du schreibst also `+begin` in das Buch :book:. \nPlötzlich beginnt es zu zittern! Du erkennst Tintenkleckse, die scheinbar wie aus dem Nichts auf den leeren Seiten dieses Buches :book: erscheinen und sich aufeinander zu bewegen. Nach kurzer Zeit kannst du Buchstaben erkennen!\n\nDu bist geschockt! Das Buch :book: ist tatsächlich MAGISCH!?! Dann kann es dir vermutlich wirklich helfen. Du realisierst, dass du abhängig von diesem Buch :book: bist und seinen Worten folge leisten musst, um in diesem heiligen Tempel :hindu_temple: weiterzukommen.\nDu beginnst die neu beschriebenen Seiten zu lesen:",
+      "message_book": "*Du bist also bereit, dich den **Prüfungen** zu stellen! Dann will ich dir alles erklären:\nNur mit meiner Hilfe kannst du verschlossene Objekte :lock: öffnen. Ich kann dir nämlich die geheimen Zaubersprüche :scroll: beibringen, die du zum Öffnen brauchst. Jedoch funktionieren die Sprüche :scroll: nur ein einziges Mal und auch nur bei dir. Kein Anderer kann deine Sprüche :scroll: nutzen! Zudem kann ich mir nur einen Spruch :scroll: pro Person gleichzeitig merken.\n\nUm allerdings einen Spruch :scroll: zu erhalten, musst du zuerst ein Rätsel:grey_question:lösen!\nSchreibe mir **PRIVAT**, also **nur hier in DIESEM Chat**, mithilfe des Befehls `+write` die Lösungen zu den dir auferlegten Rätseln. Die Lösungen übergibst du als Lösungsargument `[text]`, indem du diese einfach hinter `+write` schreibst:  `+write [text] [text] [text]` (`[]` soll dabei natürlich nicht explizit mitgeschrieben werden)!\nDu kannst bis zu drei Lösungs-Argumente bei diesem Kommando abschicken kannst (Es sind nicht immer drei Lösungsargumente gefördert)!\nEin Beispiel wäre: `+write ja nein uff`.\n\nWenn deine Antwort richtig war, erhältst du von mir einen einmal nutzbaren Zauberspruch :scroll:, um ein bestimmtes Schloss :lock: zu öffnen. Den Spruch :scroll: musst du dann **im Server** im Channel <#%0> mit `+whisper [text] [text]` aufsagen! \nFalls du einen Spruch :scroll: verloren hast, kannst du mit `+write` jederzeit mit den alten Lösungen einen Neuen anfordern (aber natürlich nur **privat**).\nFalls du Probleme mit den Kommandos hast, schreibe einfach mal `+help`!\n\nAlles verstanden? Sehr gut! Dann kommt hier dein erstes Rätsel:grey_question::```Zwischen Anfang und Ende die Antworten liegen!\nSuche unter denjenigen, die erschienen!```*"
+    },
+    "write": {
+      "help": "Schreibe eine Lösung in das Buch :book:. Bitte schreibe diesen Befehl PRIVAT an den Bot!",
+      "usage": "[Text] [Text] [Text] ... [Text]",
+      "success": "**Glückwunsch!!!**\nDu hast mein Rätsel:grey_question:erraten. Schreite kühn voran!\nKlicke auf den Channel <#%1> und schreibe den Zauberspruch :scroll:: `+whisper %0`",
+      "fail": "**Leider falsch!**\nVersuch es weiter, dann bekommst du es bestimmt heraus!"
+
+    },
+    "combine": {
+      "help": "Kombiniert drei Schlüsselteile :key2: zu einem voll funktionsfähigen Schlüssel :fleur_de_lis:.",
+      "success": "**Erfolg!!**\nDu fügst die drei Schlüsselteile :key2: zusammen. Kaum hast du alle Teile ineinander gelegt, blitzt alles in einem hellen Strahl auf.\nAuf einmal hältst du einen fertigen ganzen Schlüssel :fleur_de_lis: in der Hand, der dir wie neu erscheint. Es ist noch ganz warm und hat eine lilane Farbe angenommen. \nDu bist ganz aufgeregt und schreitest langsam Richtung jener düster wirkenden Tür :smiling_imp:.\nDer Schlüssel :fleur_de_lis: passt tatsächlich! Der Weg zu <#%0> steht dir nun offen!",
+      "fail": "**Misserfolg!**\nDu hast leider nicht alle drei Schlüsselteile :key2:, die du benötigst, um daraus einen ganzen Schlüssel :fleur_de_lis: zu kombinieren!",
+      "already_have": "**Misserfolg**\nDu hast bereits aus deinen drei Schlüsselteilen :key2: einen Schlüssel :fleur_de_lis: kombiniert!"
+    },
+    "whisper": {
+      "help": "Flüstere einen Zauberspruch :scroll: und vielleicht passiert etwas",
+      "usage": "[Text] [Text]",
+      "fail": "**Leider falsch!**\nDiesen Zauberspruch :scroll: kenne ich nicht oder nicht mehr.",
+      "already_have": "**Glückwunsch!!!**\nAber du hast das Rätsel bereits gelöst. Es passiert nichts!",
+      "success": {
+        "1": "**Glückwunsch!!!**\nDu hast deinen ersten gültigen Zauberspruch :scroll: gesprochen.\nDie verschlossene Tür ist nun verschwunden. Du kannst nun in <#%0> vorschreiten!",
+        "2": "**Glückwunsch!!!**\nDu hast deinen zweiten gültigen Zauberspruch :scroll: gesprochen.\nDie verschlossene Tür ist nun verschwunden. Du kannst nun in <#%0> vorschreiten!",
+        "3": "**Glückwunsch!!!**\nDie Truhe der **Weisheit** öffnet sich und du erhältst ein Schlüsselteil :key2:!\nWenn du alle drei besitzt, `+combine` sie!",
+        "4": "**Glückwunsch!!!**\nDie Truhe der **Aktivität** öffnet sich und du erhältst ein Schlüsselteil :key2:!\nWenn du alle drei besitzt, `+combine` sie!",
+        "5": "**Glückwunsch!!!**\nDie Truhe des **Wissens** öffnet sich und du erhältst ein Schlüsselteil :key2:!\nWenn du alle drei besitzt, `+combine` sie!",
+        "6": "**Glückwunsch!!!**\nAber wie konntest du diesen Ort erreichen? Es ist nicht vorgesehen, chamber-3 ohne `combine` zu erreichen. Ilias würde es bestimmt brennend interessieren, wie du das geschafft hast!",
+        "7": "**Glückwunsch!!!**\nKurz nachdem du den Bannspruch aufgesagt hast, schreit *Prokrastination* :imp: höllisch auf, während er sich immer mehr zusammenzieht und immer kleiner wird, bis er schließlich komplett verschwunden ist. Du hast *Prokrastination* :imp: erfolgreich mit Prokrastination besiegt!\nDie letzte verschlossene Tür ist nun verschwunden. Du kannst nun in <#%0> vorschreiten!",
+        "8": "**Glückwunsch!!!**\nDu hast das letzte Rätsel:grey_question:gelöst und deinen letzten gültigen Zauberspruch :scroll: gesprochen!\nDu kannst nun in den <#%0> vorschreiten!"
+      }
     }
   }
 }

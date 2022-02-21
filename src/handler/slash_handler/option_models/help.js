@@ -1,13 +1,14 @@
 module.exports = [
     {
         "name": "command",
-        "description": "information for the specific command",
+        "description": "Informationen über einen spezifischen Befehl",
         "required": false,
         "choices": [
             { "name": "help", "value": "help" },
-            { "name": "lang", "value": "lang" },
-            { "name": "echo", "value": "echo" },
-            { "name": "ping", "value": "ping" },
+            { "name": "begin", "value": "begin" },
+            { "name": "combine", "value": "combine" },
+            { "name": "whisper", "value": "whisper" },
+            { "name": "write", "value": "write" },
         ]
     }
 ]

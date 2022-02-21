@@ -17,7 +17,7 @@ function is_valid(lang) {
 
 // returns text in the correct language (key = json key with its scope (e.g. commands.echo.help))
 async function get_text(msg, key, ...inserts) {
-    const lang = (msg.client.config.enable_lang_change) ? await msg.client.DB.User_Lang.get(msg) : msg.client.config.default_lang
+    const lang = msg.client.config.default_lang
     const key_arr = key.split(".")
 
     let scope_text = text[lang]

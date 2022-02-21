@@ -12,7 +12,8 @@ module.exports = {
     args_needed: false,
     args_min_length: 0,
     args_max_length: 0,
-    enable_slash: true,
+    admin_only: true,
+    enable_slash: false,
     async execute(msg, args) {
         // websocket heartbeat
         await msg.client.output.send(msg, await gt(msg, s + "websocket", msg.client.ws.ping))

@@ -1,10 +1,10 @@
 {
-  "prefix": "<YOUR_PREFIX>",
-  "client_id": "<YOUR_CLIENT_ID>",
-  "token": "<YOUR_TOKEN>",
-  "enable_prefix_change": true,
+  "prefix": "+",
+  "client_id": "",
+  "token": "",
+  "enable_prefix_change": false,
 
-  "enable_logging": true,
+  "enable_logging": false,
   "log_file_name": "combined.log",
 
   "role_ids_admin": [ "" ],
@@ -12,30 +12,75 @@
 
   "enable_activity": true,
   "activity": {
-    "name": "<prefix>help",
+    "name": "+help",
     "type": "PLAYING"
   },
 
   "help": {
-    "show_only_permitted_commands": false,
-    "send_to_dm": false,
+    "show_only_permitted_commands": true,
+    "send_to_dm": true,
     "show_cmd_modifications": true
   },
 
   "embed": {
     "color": "RANDOM",
-    "author_name": "",
+    "author_name": "Hodor",
     "avatar_url": ""
   },
 
-  "default_lang": "en",
-  "enable_lang_change": true,
+  "default_lang": "de",
+  "enable_lang_change": false,
   "lang_paths": {
-    "de": "text_de.json",
-    "en": "text_en.json"
+    "de": "text_de.json"
   },
 
   "enable_standard_commands": true,
   "enable_slash_commands": true,
-  "auto_slash_options": false
+  "auto_slash_options": true,
+
+
+  "solutions": {
+    "1": [""],
+    "2": [""],
+    "3": [""],
+    "4": [""],
+    "5": [""],
+    "6": [""],
+    "7": [""],
+    "8": [""]
+  },
+  "chamber": {
+    "prolog": 0,
+    "1": 1,
+    "2": 2,
+    "2_wisdom": 3,
+    "2_expert": 4,
+    "2_knowledge": 5,
+    "3": 6,
+    "4": 7,
+    "epilogue": 8,
+    "ids": [
+      "PROLOG_ROLE_ID",
+      "CHAMBER_1_ROLE_ID",
+      "CHAMBER_2_ROLE_ID",
+      "CHAMBER_2_ROLE_ID",
+      "CHAMBER_2_WISDOM_ROLE_ID",
+      "CHAMBER_2_EXPERT_ROLE_ID",
+      "CHAMBER_3_KNOWLEDGE_ROLE_ID",
+      "CHAMBER_4_ROLE_ID",
+      "EPILOGUE_ROLE_ID"
+    ],
+    "channel_ids": {
+      "bot": "BOT_CHANNEL_ID",
+      "0": "PROLOGUE_CHANNEL_ID",
+      "1": "CHAMBER_1_CHANNEL_ID",
+      "2": "CHAMBER_2_CHANNEL_ID",
+      "3": "CHAMBER_2_CHANNEL_ID",
+      "4": "CHAMBER_2_CHANNEL_ID",
+      "5": "CHAMBER_2_CHANNEL_ID",
+      "6": "CHAMBER_3_CHANNEL_ID",
+      "7": "CHAMBER_4_CHANNEL_ID",
+      "8": "EPILOGUE_CHANNEL_ID"
+    }
+  }
 }

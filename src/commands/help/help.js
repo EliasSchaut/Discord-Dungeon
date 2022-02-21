@@ -17,6 +17,7 @@ module.exports = {
     args_min_length: 0,
     args_max_length: 1,
     usage: async function (msg) { return await gt(msg, s + "usage") },
+    cooldown: 5,
     enable_slash: true,
     async execute(msg, args) {
         const { commands } = msg.client
@@ -72,7 +73,7 @@ module.exports = {
 
     // create an embed with information about all commands
     async create_embed_all_commands(msg) {
-        const prefix = await msg.client.DB.Guild.get_prefix(msg)
+        const prefix = await msg.client.config.prefix
         const description = await gt(msg, s + "intro", await msg.client.helper.commands_to_string(msg),
             `\`${prefix}${this.name} ${await this.usage(msg)}\``)
 
@@ -81,7 +82,7 @@ module.exports = {
 
     // create an embed with information about a given specific command
     async create_embed_specific_command(msg, command) {
-        const prefix = await msg.client.DB.Guild.get_prefix(msg)
+        const prefix = msg.client.config.prefix
         const description = []
 
         const name = await msg.client.mods.name.get(msg, command)
