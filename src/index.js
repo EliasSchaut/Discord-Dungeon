@@ -29,8 +29,6 @@ client.slasher = require("./handler/slash_handler/slasher")
 client.command_event = require("./handler/event_handler/command_event")
 client.slash_event = require("./handler/event_handler/slash_event")
 client.menu_event = require("./handler/event_handler/menu_event")
-client.button_event = require("./handler/event_handler/button_event")
-client.events = require("./handler/event_handler/events")
 client.output = require("./util/output")
 client.mod_man = require("./handler/modification_handler/mod_manager")
 
