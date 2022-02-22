@@ -87,9 +87,6 @@ client.once('ready', async () => {
 client.on('messageCreate',async msg => {
     // react on commands
     if (client.config.enable_standard_commands) await client.command_event.message_create(msg)
-
-    // react on all messages for events
-    await client.events.event_create(msg)
 })
 
 // react on interactions
@@ -99,9 +96,6 @@ client.on("interactionCreate", async interaction => {
 
     // when a menu was chosen
     else if (interaction.isSelectMenu()) await client.menu_event.interaction_create(interaction)
-
-    // when a button was pressed
-    else if (interaction.isButton()) await client.button_event.interaction_create(interaction)
 })
 // ---------------------------------
 
