@@ -75,9 +75,6 @@ client.once('ready', async () => {
         await client.slasher.register(client)
     }
 
-    // set up events
-    await client.events.init(client)
-
     // log ready info
     if (problem_free_set_up) {
         client.logger.log('info', 'Ready!')
