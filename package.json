@@ -3,6 +3,7 @@
   "version": "1.0.0-beta",
   "description": "A Dungeon-Adventure for Discord. Solve hard riddles and achieve the lost documents of the holy Ilias!",
   "scripts": {
+    "start": "nest start",
     "build": "nest build",
     "dev": "nest start --debug --watch",
     "format": "prettier --write \\\"src/**/*.ts\\\""
