@@ -5,6 +5,7 @@ import { EnvValidationSchema } from "@/common/validation/env.validation";
 import { DiscordModule } from "@discord-nestjs/core";
 import { GatewayIntentBits } from "discord.js";
 import { BotModule } from "@/bot/bot.module";
+import * as process from "process";
 
 @Module({
   imports: [
@@ -14,6 +15,11 @@ import { BotModule } from "@/bot/bot.module";
         discordClientOptions: {
           intents: [GatewayIntentBits.Guilds],
         },
+        registerCommandOptions: [
+          {
+            forGuild: process.env.GUILD_ID as string,
+          },
+        ],
         autoLogin: true,
       }),
     }),
