@@ -9,6 +9,10 @@ import * as process from "process";
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      validate: () => EnvValidationSchema.validate(process.env),
+    }),
     DiscordModule.forRootAsync({
       useFactory: () => ({
         token: process.env.TOKEN as string,
@@ -22,10 +26,6 @@ import * as process from "process";
         ],
         autoLogin: true,
       }),
-    }),
-    ConfigModule.forRoot({
-      isGlobal: true,
-      validationSchema: EnvValidationSchema,
     }),
     BotModule,
   ],
