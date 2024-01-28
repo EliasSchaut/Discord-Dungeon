@@ -15,7 +15,7 @@
     "@discordjs/rest": "^0.3.0",
     "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
-    "follow-redirects": ">=1.14.7",
+    "follow-redirects": ">=1.15.4",
     "pm2": "^5.1.2",
     "winston": "^3.5.0"
   },
